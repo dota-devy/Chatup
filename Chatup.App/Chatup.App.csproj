@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+    <OutputType>Library</OutputType>
+    <RuntimeIdentifier>android</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+    <OutputType>Library</OutputType>
+    <RuntimeIdentifier>ios</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">
+    <OutputType>Exe</OutputType>
+    <RuntimeIdentifier>maccatalyst</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-windows10.0.19041.0'">
+    <OutputType>WinExe</OutputType>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <MauiXaml Include="**/*.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
