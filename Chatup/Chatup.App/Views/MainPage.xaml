@@ -1,0 +1,24 @@
+<Content>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chatup.App.Views.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Welcome to Chatup!"
+               FontSize="32"
+               HorizontalOptions="Center" />
+
+        <Button Text="Connect via Bluetooth"
+                Command="{Binding ConnectBluetoothCommand}"
+                HorizontalOptions="Center" />
+
+        <ListView ItemsSource="{Binding ChatMessages}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Sender}" Detail="{Binding Message}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+</Content>
